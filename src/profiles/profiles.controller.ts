@@ -29,11 +29,9 @@ export class ProfilesController {
 
   @Post()
   create(@Body() createProfileDto: CreateProfileDto) {
-    return {
-      name: createProfileDto.name,
-      description: createProfileDto.description,
-    };
+    return this.profilesService.create(createProfileDto);
   }
+
   @Put(':id')
   update(@Param('id') id: string, @Body() updateProfileDto: UpdateProfileDto) {
     return {
