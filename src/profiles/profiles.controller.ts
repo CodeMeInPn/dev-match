@@ -20,10 +20,13 @@ export class ProfilesController {
   findAll() {
     return this.profilesService.findAll();
   }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return { id };
+    console.log('id', id);
+    return this.profilesService.findOne(id);
   }
+
   @Post()
   create(@Body() createProfileDto: CreateProfileDto) {
     return {
