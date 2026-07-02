@@ -39,4 +39,14 @@ export class ProfilesService {
 
     return newProfile;
   }
+
+  delete(id: string) {
+    const matchingIndex = this.profiles.findIndex(
+      (profile) => profile.id === id,
+    );
+
+    if (matchingIndex !== -1) {
+      this.profiles.splice(matchingIndex, 1);
+    }
+  }
 }

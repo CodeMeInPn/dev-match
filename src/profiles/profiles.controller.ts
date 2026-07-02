@@ -42,6 +42,6 @@ export class ProfilesController {
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Param('id') id: string) {
-    console.log('Profile with id ' + id + ' has been deleted');
+    this.profilesService.delete(id);
   }
 }
